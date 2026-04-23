@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Furiend - Home</title>
+
+<style>
+:root {
+    --blue: #4da6ff;
+    --lightblue: #e6f2ff;
+    --white: #ffffff;
+    --dark: #003366;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--lightblue);
+    color: var(--dark);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: var(--blue);
+}
+
+.logo-main {
+    font-size: 28px;
+    font-weight: 900;
+    color: white;
+}
+
+.logo-sub {
+    font-size: 16px;
+    color: var(--white);
+}
+
+.nav-links a {
+    padding: 10px 20px;
+    background: white;
+    color: var(--blue);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.nav-links a:hover {
+    background: var(--dark);
+    color: white;
+}
+
+.banner-frame {
+    width: 95%;
+    margin: 20px auto;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+#banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,51,102,0.8), transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px;
+    color: white;
+}
+
+.cta-btn {
+    padding: 10px 25px;
+    background: white;
+    color: var(--blue);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    width: fit-content;
+}
+
+.section-title {
+    margin-left: 3%;
+    font-size: 30px;
+}
+
+.grid-wrapper {
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    padding-bottom: 60px;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3 {
+    padding: 10px;
+    margin: 0;
+}
+
+.card p {
+    padding: 0 10px;
+    color: #555;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div>
+        <div class="logo-main">FURIEND</div>
+        <div class="logo-sub">Pawnders Corp</div>
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="gservice.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="account.html">Sign Up / Log In</a>
+    </div>
+</nav>
+
+<div class="banner-frame">
+    <img id="banner" src="https://media.istockphoto.com/id/2214073418/photo/banner-pets-smiling-four-dogs-with-happy-expression-and-closed-eyes-isolated-on-blue-pastel.jpg?s=612x612&w=0&k=20&c=rE1JlXiawudf4cDppKDoUjITYp-j7Ad9Sb-RmJtR90w=">
+    <div class="banner-overlay">
+        <h1>Helping Animals, One Click at a Time</h1>
+        <a href="gservice.html" class="cta-btn">Explore Services</a>
+    </div>
+</div>
+
+<h2 class="section-title">What You Can Do</h2>
+
+<div class="grid-wrapper">
+
+    <div class="card">
+        <img src="https://levetclub.com/wp-content/uploads/2025/03/chirurgie2-1.jpg">
+        <h3>Report an Animal Incident</h3>
+        <p>Quickly report injured or stray animals and connect them with the right help and services.</p>
+    </div>
+
+    <div class="card">
+        <img src="https://mypetplugz.com/wp-content/uploads/2024/12/close-up-pet-accessories-scaled.jpg">
+        <h3>Donate Pet-Related Items</h3>
+        <p>Support shelters and rescues by donating food, supplies, and other essential pet items.</p>
+    </div>
+
+    <div class="card">
+        <img src="https://cdn.prod.website-files.com/660474fcff459f6b0d6ad9d3/69a681055f596ebbe86ef5c1_Bitmap.webp">
+        <h3>Adopt a Pet</h3>
+        <p>Give animals a loving home and a second chance through safe and guided adoption.</p>
+    </div>
+
+    <div class="card">
+        <img src="https://pethouse.ph/wp-content/uploads/2025/06/Exclusive-DOG-Hospital.jpg">
+        <h3>Find Clinics</h3>
+        <p>Locate nearby veterinary clinics and services for immediate and professional care.</p>
+    </div>
+
+</div>
+
+<script>
+const banners = [
+"https://static.vecteezy.com/system/resources/thumbnails/060/744/227/small/funny-and-happy-puppy-dog-peeking-out-from-behind-a-blue-banner-photo.jpg",
+"https://media.istockphoto.com/id/2214073418/photo/banner-pets-smiling-four-dogs-with-happy-expression-and-closed-eyes-isolated-on-blue-pastel.jpg?s=612x612&w=0&k=20&c=rE1JlXiawudf4cDppKDoUjITYp-j7Ad9Sb-RmJtR90w="
+];
+
+let b = 0;
+setInterval(() => {
+    b = (b + 1) % banners.length;
+    document.getElementById("banner").src = banners[b];
+}, 3000);
+</script>
+
+</body>
+</html>
