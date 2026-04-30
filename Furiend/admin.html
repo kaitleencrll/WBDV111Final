@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furiend | Admin Dashboard</title>
+  
+    <link rel="stylesheet" href="demostyle.css">
+    <link rel="stylesheet" href="adminstyle.css">
+</head>
+<body>
+
+<nav id="navbar">
+    <div class="logo">FURIEND ADMIN</div>
+
+    <div class="nav-links">
+        <a href="#dashboard">Dashboard</a>
+        <a href="#cases">Case Management</a>
+        <a href="#org">Organization Listings</a>
+        <a href="#resources">Resource Management</a>
+        <a onclick="openModal()" class="profile-btn">Profile</a>
+        <a href="index.html" class="logout">Log Out</a>
+    </div>
+</nav>
+
+<section id="dashboard" class="animate-fade">
+    
+    <div class="admin-hero" style="background-image: linear-gradient(rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.8)), url('Media/hero.png'); background-size: cover; background-position: center;">
+        <div class="hero-text">
+          
+            <h1>Welcome Back, <span style="color: var(--primary);">Admin07</span>!</h1>
+            <p>System status: <span class="status-indicator">● Online</span> | Active Rescues: 12</p>
+        </div>
+        <div class="hero-avatar">
+      
+            <img src="Media/logo.jpg" alt="Admin Avatar">
+        </div>
+    </div>
+
+
+ <div class="admin-stats-container">
+    <div class="grid admin-stats-grid">
+        
+       
+        <div class="card stat-card pro-card float-anim" style="--accent: #4a90e2;">
+            <div class="pro-card-header">
+                <h2>📈 Analytics</h2>
+            </div>
+            <div class="stat-number" data-target="1284">0</div>
+            <p>Total Rescues</p>
+            <div class="analytics-graph">
+                <svg viewBox="0 0 100 30">
+                    <path class="graph-path-infinite" d="M0,25 L10,20 L20,28 L30,15 L40,22 L50,10 L60,18 L70,5 L80,15 L90,8 L100,20" fill="none" stroke="var(--accent)" stroke-width="3"/>
+                </svg>
+            </div>
+        </div>
+        
+        
+        <div class="card stat-card pro-card centered-content" style="--accent: #facc15;">
+            <div class="particle-box">
+                <span class="hollow-yellow"></span>
+                <span class="hollow-yellow"></span>
+                <span class="hollow-yellow"></span>
+                <span class="hollow-yellow"></span>
+                <span class="hollow-yellow"></span>
+            </div>
+            <div class="pro-card-header">
+                <h2>💰 Donations</h2>
+            </div>
+            <div class="stat-number" data-target="45200">0</div>
+            <p>Funds Raised This Month (₱)</p>
+        </div>
+        
+      
+        <div class="card stat-card pro-card alert-active pulse-red" onclick="location.href='#cases'" style="--accent: #ef4444;">
+            <div class="pro-card-header">
+                <h2>🔔 Urgent Alerts</h2>
+            </div>
+            <div class="bell-box">
+                <div class="ringing-bell">🔔</div>
+            </div>
+            <div class="stat-number" data-target="3">0</div>
+            <p><i>Action Required</i></p>
+        </div>
+        
+    </div>
+</div>
+</section>
+
+<div class="command-shell" id="cases"> <!-- Navigation ID Fixed Here -->
+    <section class="dashboard-core">
+        <div class="header-main">
+            <div class="brand">
+                <h2 class="title">CASE <span class="light">MANAGEMENT</span></h2>
+                <div class="live-indicator active-glow" style="color: white;">
+    <span class="pulse green-pulse"></span> SYSTEM ACTIVE
+</div>
+            </div>
+            <div id="clockDisplay" class="clock"></div>
+        </div>
+
+        <div class="dual-grid">
+            <!-- LEFT: PRIORITY -->
+            <div class="col priority-zone">
+                <div class="col-head">
+                    <span>🚨</span>
+                    <h3>PRIORITY DISPATCH</h3>
+                    <span class="count-tag red">3</span>
+                </div>
+                <div id="urgentReports" class="stack"></div>
+            </div>
+
+            <!-- RIGHT: STANDARD -->
+            <div class="col standard-zone">
+                <div class="col-head">
+                    <span>📋</span>
+                    <h3>STANDARD QUEUE</h3>
+                    <span class="count-tag blue">5</span>
+                </div>
+                <div id="reportList" class="stack"></div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<section id="org" class="animate-fade">
+    <h2>Organization Listings</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Verified Partners</h3>
+            <div class="partner-list">
+                <div class="partner-item">
+                    <img src="Media/placeholder.jpg" class="partner-img">
+                    <span>Central Vet Clinic</span>
+                </div>
+                <div class="partner-item">
+                    <img src="Media/placeholder.jpg" class="partner-img">
+                    <span>City Animal Shelter</span>
+                </div>
+            </div>
+        </div>
+        <div class="card dark-card">
+            <h3>Pending Verification</h3>
+            <p>North Rescue Team is awaiting document review.</p>
+            <button class="btn">Verify Application</button>
+        </div>
+    </div>
+</section>
+
+<div class="modal" id="adminProfileModal">
+    <div class="modal-content animate-fade">
+        <h2>Admin Settings</h2>
+        <div class="modal-body">
+            <label>Full Name</label>
+            <input type="text" value="Juan Dela Cruz">
+            <label>Admin Access Level</label>
+            <input type="text" value="Super Administrator" disabled>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" onclick="closeAdminModal()">Save</button>
+            <button class="btn-text" onclick="closeAdminModal()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<div id="profileModal" class="modal">
+    <div class="modal-content">
+        <h2>Admin Profile</h2>
+
+        <h4>Organization Info</h4>
+        <input type="text" value="Furiend Admin" style="width:100%;padding:10px;margin:10px 0;">
+
+        <h4>Settings</h4>
+        <label><input type="checkbox" checked> Enable Alerts</label><br>
+        <label><input type="checkbox"> Email Notifications</label>
+
+        <br><br>
+        <button class="btn" onclick="closeModal()">Close</button>
+    </div>
+</div>
+
+<script src="adminscript.js"></script>
+</body>
+</html>
