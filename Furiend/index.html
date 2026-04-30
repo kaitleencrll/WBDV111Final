@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Furiend | Pawnders Corp</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <div class="brand">
+        <div class="logo-main">FURIEND</div>
+        <div class="logo-sub">Pawnders Corp</div>
+    </div>
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#directory">Service Directory</a>
+        <a href="#contact">Contact</a>
+        <a href="login.html" class="login-btn">Log In / Sign Up</a>
+    </div>
+</nav>
+
+<section id="home" class="hero-carousel">
+    <div class="hero-track" id="heroTrack">
+        <div class="hero-slide" style="background-image: url('Media/banner1.jpg');">
+            <div class="hero-content">
+                <h1>Helping Animals, One Click at a Time 🐾</h1>
+                <p>Welcome to Valenzuela City's digital ecosystem for animal welfare and rescue coordination.</p>
+                <a href="#directory" class="btn-explore">Explore Services</a>
+            </div>
+        </div>
+        <div class="hero-slide" style="background-image: url('Media/banner2.jpg');">
+            <div class="hero-content">
+                <h1>Rescue. Rehabilitate. Rehome.</h1>
+                <p>Join our mission to provide every stray in Valenzuela with a safe and loving environment.</p>
+                <a href="#about" class="btn-explore">Our Mission</a>
+            </div>
+        </div>
+        <div class="hero-slide" style="background-image: url('Media/banner3.jpg');">
+            <div class="hero-content">
+                <h1>Become a Community Hero</h1>
+                <p>Report incidents and help us connect animals with the resources they desperately need.</p>
+                <a href="login.html" class="btn-explore">Get Started</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="hero-cards">
+    <div class="h-card">
+        <div class="h-card-img"><img src="Media/card1.jpg"></div>
+        <div class="h-card-text">
+            <h3>🚨 Incident Reporting</h3>
+            <p>Report strays in distress instantly using our GPS-enabled reporting tool.</p>
+        </div>
+    </div>
+    <div class="h-card">
+        <div class="h-card-img"><img src="Media/card2.jpg"></div>
+        <div class="h-card-text">
+            <h3>📦 Donation Center</h3>
+            <p>Directly provide food and medical supplies to our partner shelters.</p>
+        </div>
+    </div>
+    <div class="h-card">
+        <div class="h-card-img"><img src="Media/card3.jpg"></div>
+        <div class="h-card-text">
+            <h3>🏠 Adopt A Pet</h3>
+            <p>Connect with lovable pets and give them the forever home they deserve.</p>
+        </div>
+    </div>
+</div>
+
+<section id="about" class="about-section">
+    <h2 class="about-title">About Us</h2>
+    <div class="about-grid">
+        
+        <div class="about-card" onclick="toggleAbout(this)">
+            <div class="about-img"><img src="Media/about1.jpg"></div>
+            <div class="about-info">
+                <h3>Mission & Vision <span>+</span></h3>
+                <div class="details-content">
+                    <p>Our heartbeat is establishing a stray-free and compassionate Valenzuela City! 🐾 We are leveraging cutting-edge community-driven digital solutions and high-speed response networks to ensure every animal is seen, heard, and cared for. By connecting local residents with real-time reporting tools, we aim to bridge the gap between stray sightings and professional rescue, fostering a safer environment for both paws and people. 🏛️✨</p>
+                </div>
+            </div>
+        </div>
+
+     
+        <div class="about-card" onclick="toggleAbout(this)">
+            <div class="about-img"><img src="Media/about2.jpg"></div>
+            <div class="about-info">
+                <h3>Project Background <span>+</span></h3>
+                <div class="details-content">
+                    <p>Born as a research-led initiative by dedicated OLFU students, this project is designed to test and prove the efficiency of mobile-first reporting in critical animal welfare scenarios. 🎓💻 We analyzed the delays in traditional rescue methods and built Furiend as a modern answer to an age-old problem. This is where academic research meets real-world community service, proving that a single report can truly save a life. 🐶📋</p>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="about-card" onclick="toggleAbout(this)">
+            <div class="about-img"><img src="Media/about3.jpg"></div>
+            <div class="about-info">
+                <h3>System Overview <span>+</span></h3>
+                <div class="details-content">
+                    <p>Furiend is a fully integrated web ecosystem designed for total transparency and speed. 🌐🚀 Our platform features real-time geolocation tagging to pin-point rescues, automated donation tracking to ensure every cent helps a furry friend, and a robust shelter management module for our partners. It’s a digital sanctuary where logistics meet love, making pet adoption and rescue management as seamless as possible for everyone involved. 🦴💳</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="carousel-section">
+    <h2 style="text-align: center; margin-bottom: 40px; color: var(--dim-blue);">✨ Success Stories Feed</h2>
+    <div class="carousel-container">
+        <button class="side-btn btn-L" onclick="moveSlide(-1)">❮</button>
+        <button class="side-btn btn-R" onclick="moveSlide(1)">❯</button>
+        <div class="carousel-track-wrapper">
+            <div class="carousel-track" id="track">
+                <div class="slide active">
+                    <div class="slide-header">
+                        <div class="pfp-container"><img src="Media/pfp1.jpg"></div>
+                        <div><b>@KaruhatanRescue</b><br><small>2 days ago</small></div>
+                    </div>
+                    <img src="Media/rescue1.jpg" class="slide-img-main">
+                    <div class="slide-content">
+                        <p><b>Cooper's Journey:</b> Found with severe injuries in Karuhatan. After being reported on Furiend, he received immediate medical care and was adopted by a loving family within a week. He now enjoys long walks at the park!</p>
+                    </div>
+                    <div class="social-bar">
+                        <button class="social-btn">❤️ Like</button>
+                        <button class="social-btn">💬 Comment</button>
+                        <button class="social-btn">🔗 Share</button>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-header">
+                        <div class="pfp-container"><img src="Media/pfp2.jpg"></div>
+                        <div><b>@LunaLove</b><br><small>5 days ago</small></div>
+                    </div>
+                    <img src="Media/rescue2.jpg" class="slide-img-main">
+                    <div class="slide-content">
+                        <p><b>Luna's Transformation:</b> Luna was found malnourished in Malanday. Through our resource donation module, donors provided her with specialized vitamins and food. She has gained weight and is now a energetic puppy ready for fun!</p>
+                    </div>
+                    <div class="social-bar">
+                        <button class="social-btn">❤️ Like</button>
+                        <button class="social-btn">💬 Comment</button>
+                        <button class="social-btn">🔗 Share</button>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-header">
+                        <div class="pfp-container"><img src="Media/pfp3.jpg"></div>
+                        <div><b>@MaysanPaws</b><br><small>1 week ago</small></div>
+                    </div>
+                    <img src="Media/rescue3.jpg" class="slide-img-main">
+                    <div class="slide-content">
+                        <p><b>Browny's Rescue:</b> Found at a construction site in Maysan. He was dehydrated and fearful. A Furiend volunteer team arrived within 30 minutes of the report. Today, he's the official mascot of a local cafe!</p>
+                    </div>
+                    <div class="social-bar">
+                        <button class="social-btn">❤️ Like</button>
+                        <button class="social-btn">💬 Comment</button>
+                        <button class="social-btn">🔗 Share</button>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-header">
+                        <div class="pfp-container"><img src="Media/pfp4.jpg"></div>
+                        <div><b>@OldGoldRescue</b><br><small>2 weeks ago</small></div>
+                    </div>
+                    <img src="Media/rescue4.jpg" class="slide-img-main">
+                    <div class="slide-content">
+                        <p><b>Max's Golden Years:</b> Max, a senior dog, was abandoned near the city hall. While senior adoptions are rare, his Furiend profile reached a retired couple looking for a calm companion. He now spends his days napping on a soft rug.</p>
+                    </div>
+                    <div class="social-bar">
+                        <button class="social-btn">❤️ Like</button>
+                        <button class="social-btn">💬 Comment</button>
+                        <button class="social-btn">🔗 Share</button>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-header">
+                        <div class="pfp-container"><img src="Media/pfp5.jpg"></div>
+                        <div><b>@SafeHavenPH</b><br><small>3 weeks ago</small></div>
+                    </div>
+                    <img src="Media/rescue5.jpg" class="slide-img-main">
+                    <div class="slide-content">
+                        <p><b>Kitty's Recovery:</b> Trapped in a drainage pipe during a heavy storm, Kitty was saved by a community effort coordinated through our live alerts. She has been successfully rehomed with a vet technician.</p>
+                    </div>
+                    <div class="social-bar">
+                        <button class="social-btn">❤️ Like</button>
+                        <button class="social-btn">💬 Comment</button>
+                        <button class="social-btn">🔗 Share</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="directory" class="dir-section" style="padding: 60px 0;">
+    <h2 style="text-align: center; margin-bottom: 50px; color: var(--dim-blue);">🛠️ Service Directory</h2>
+    <div class="dir-grid">
+        
+        
+        <div class="dir-card">
+            <div>
+                <div class="dir-img"><img src="Media/card5.jpg"></div>
+                <div class="dir-info">
+                    <h4>🆘 Emergency Protocols</h4>
+                    <p>Critical instructions for handling injured strays safely.</p>
+                    <ul class="dir-bullets">
+                        <li>Animal First Aid</li>
+                        <li>Safety Perimeter Triage</li>
+                        <li>24/7 Hotline Directory</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="login.html" class="login-btn" style="text-align:center; padding:10px; border-radius:10px; text-decoration:none; font-size:12px;">Access Guide</a>
+        </div>
+
+       
+        <div class="dir-card">
+            <div>
+                <div class="dir-img"><img src="Media/card6.jpg"></div>
+                <div class="dir-info">
+                    <h4>🏠 Adoption Center</h4>
+                    <p>Our centralized hub for rehoming lovable pets.</p>
+                    <ul class="dir-bullets">
+                        <li>Verified Pet Profiles</li>
+                        <li>Health & Vax Records</li>
+                        <li>Adopter Interviews</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="login.html" class="login-btn" style="text-align:center; padding:10px; border-radius:10px; text-decoration:none; font-size:12px;">Find Pets</a>
+        </div>
+
+       
+        <div class="dir-card">
+            <div>
+                <div class="dir-img"><img src="Media/card7.jpg"></div>
+                <div class="dir-info">
+                    <h4>📸 Impact Gallery</h4>
+                    <p>A transparent look at our success and statistics.</p>
+                    <ul class="dir-bullets">
+                        <li>Rescue Statistics</li>
+                        <li>Before/After Stories</li>
+                        <li>Transparency Logs</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="login.html" class="login-btn" style="text-align:center; padding:10px; border-radius:10px; text-decoration:none; font-size:12px;">See Impact</a>
+        </div>
+
+      
+        <div class="dir-card">
+            <div>
+                <div class="dir-img"><img src="Media/card8.png"></div>
+                <div class="dir-info">
+                    <h4>🏥 Veterinary Maps</h4>
+                    <p>Find medical help instantly within city limits.</p>
+                    <ul class="dir-bullets">
+                        <li>Low-cost Spay/Neuter</li>
+                        <li>Emergency Clinics</li>
+                        <li>Partner Pharmacies</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="login.html" class="login-btn" style="text-align:center; padding:10px; border-radius:10px; text-decoration:none; font-size:12px;">Find Vets</a>
+        </div>
+
+      
+        <div class="dir-card">
+            <div>
+                <div class="dir-img"><img src="Media/card4.jpg"></div>
+                <div class="dir-info">
+                    <h4>🏘️ Shelter Network</h4>
+                    <p>Connect with local rescue organizations near you.</p>
+                    <ul class="dir-bullets">
+                        <li>Shelter Capacity List</li>
+                        <li>Volunteer Opportunities</li>
+                        <li>Resource Logistics</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="login.html" class="login-btn" style="text-align:center; padding:10px; border-radius:10px; text-decoration:none; font-size:12px;">List Shelters</a>
+        </div>
+
+    </div>
+</section>
+
+<footer id="contact">
+    <div class="footer-grid">
+        <div class="footer-brand-col">
+            <div class="logo-main">FURIEND</div>
+            <p class="brand-tagline">Empowering Valenzuela with digital response for animal welfare.</p>
+            <div class="contact-info-list">
+                <div>📍 <b>Location:</b> Valenzuela City, Metro Manila, Philippines</div>
+                <div>📧 <b>Email:</b> support@furiend.ph</div>
+                <div>📞 <b>Phone:</b> +63 912 345 6789</div>
+            </div>
+        </div>
+        
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <div class="footer-links-nav">
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#directory">Service Directory</a>
+                <a href="login.html">Log In/Sign Up</a>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <h4>Support 💳</h4>
+            <p style="font-size: 13px; color: #94a3b8; margin-bottom: 15px;">Help us keep the platform running:</p>
+            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 15px; border: 1px dashed rgba(255,255,255,0.2);">
+                <p style="font-size: 13px; margin: 0;">📱 <b>GCash:</b> 0912-345-6789</p>
+                <p style="font-size: 13px; margin: 8px 0 0;">🏦 <b>BDO Bank:</b> 00123-456-7890</p>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <h4>Follow Us</h4>
+            <div class="social-stack">
+                <a href="javascript:void(0)" class="social-link-item">
+                    <div class="icon-slot"><img src="Media/fb.png" style="width: 40px;"></div> FuriendPH
+                </a>
+                <a href="javascript:void(0)" class="social-link-item">
+                    <div class="icon-slot"><img src="Media/x.png" style="width: 53px;"></div> @furiend.ph
+                </a>
+                <a href="javascript:void(0)" class="social-link-item">
+                    <div class="icon-slot"><img src="Media/yt.png" style="width: 53px;"></div> @furiendofficial.ph
+                </a>
+                <a href="javascript:void(0)" class="social-link-item">
+                    <div class="icon-slot"><img src="Media/ig.png" style="width: 40px;"></div> @furiend.ph
+                </a>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 50px; opacity: 0.3; font-size: 12px;">
+        &copy; 2026 Pawnders Corp | OLFU Valenzuela Campus
+    </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
