@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Furiend | Login & Sign Up</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<body class="login-body-wrapper">
+
+<div class="login-container">
+    <div class="login-visual">
+        <div class="login-carousel-bg">
+            <div class="login-slide active" style="background-image: url('Media/banner1.jpg');"></div>
+            <div class="login-slide" style="background-image: url('Media/banner2.jpg');"></div>
+            <div class="login-slide" style="background-image: url('Media/banner3.jpg');"></div>
+        </div>
+        <div class="visual-content">
+            <div style="font-weight: 800; letter-spacing: 3px; font-size: 14px; margin-bottom: 10px;">FURIEND PROJECT</div>
+            <h2>Join the Pack.</h2>
+            <p>Your action today can save a life in Valenzuela tomorrow.</p>
+        </div>
+    </div>
+
+    <div class="login-main-area">
+        <div class="form-section">
+            <div id="loginForm">
+                <div class="form-header">
+                    <h1>Welcome Back</h1>
+                    <p>New member? <a href="javascript:void(0)" onclick="openTerms()" style="color:var(--primary-blue); font-weight:700; text-decoration:none;">Sign Up</a></p>
+                </div>
+                <div class="input-group">
+                    <label>Account Email</label>
+                    <input type="text" id="loginUser" placeholder="Enter your email">
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="loginPass" placeholder="••••••••">
+                </div>
+                <button class="btn-main" onclick="handleLogin()">Sign In</button>
+            </div>
+
+            <div id="signupForm" class="hidden">
+                <div class="form-header">
+                    <h1>Create Account</h1>
+                    <p>Already a member? <a href="javascript:void(0)" onclick="toggleForms()" style="color:var(--primary-blue); font-weight:700; text-decoration:none;">Log In</a></p>
+                </div>
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Juan Dela Cruz">
+                </div>
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="juan@example.com">
+                </div>
+                <div class="input-group">
+                    <label>Create Password</label>
+                    <input type="password" placeholder="••••••••">
+                </div>
+                <button class="btn-main" onclick="completeSignup()">Complete Registration</button>
+            </div>
+        </div>
+
+        <div class="demo-sidebar">
+    <h3>Demo Accounts</h3>
+    
+    <div class="demo-card">
+        <b>User Demo</b>
+        <span class="role-desc">View Dashboard, Report Incidents, Service Directory, and Donation Center.</span>
+        <code>Account: user@furiend.ph | Password: user123</code>
+        <button class="btn-use-demo" onclick="autoFill('user')">Use Demo</button>
+    </div>
+
+    <div class="demo-card">
+        <b>Admin Demo</b>
+        <span class="role-desc">Manage Cases, Organization Listings, and Resource Management.</span>
+        <code>Account: admin@furiend.ph | Password: admin123</code>
+        <button class="btn-use-demo" onclick="autoFill('admin')">Use Demo</button>
+    </div>
+
+    <div class="demo-card">
+        <b>Super Admin Demo</b>
+        <span class="role-desc">System Dashboard, User Administration, and Platform Control Center.</span>
+        <code>Account: super@furiend.ph | Password: super123</code>
+        <button class="btn-use-demo" onclick="autoFill('superadmin')">Use Demo</button>
+    </div>
+</div>
+
+<div class="login-modal" id="termsModal">
+    <div class="modal-content">
+        <div class="terms-header">
+            <h2>Terms of Agreement</h2>
+            <p style="color: var(--text-muted); font-size: 14px;">Please acknowledge our community guidelines</p>
+        </div>
+        <div class="terms-box">
+            <div class="terms-item"><b>REPORTS</b> <span>By using Furiend, you agree that all incident reports submitted must be truthful and include accurate geolocation data for emergency response.</span></div>
+            <hr style="border: 0; border-top: 1px solid var(--border-blue); margin: 15px 0;">
+            <div class="terms-item"><b>PRIVACY</b> <span>We protect your personal data. Your contact information is only shared with verified rescuers when you initiate a report.</span></div>
+            <hr style="border: 0; border-top: 1px solid var(--border-blue); margin: 15px 0;">
+            <div class="terms-item"><b>DONATIONS</b> <span>All medical and food donations made through the platform are tracked transparently for the benefit of Valenzuela partner shelters.</span></div>
+            <hr style="border: 0; border-top: 1px solid var(--border-blue); margin: 15px 0;">
+            <div class="terms-item"><b>CONDUCT</b> <span>Any user found providing false information or harassing shelter administrators will have their access permanently revoked.</span></div>
+        </div>
+        <button class="btn-main" onclick="acceptTerms()">I Accept the Terms</button>
+        <button onclick="closeTerms()" style="width:100%; background:none; border:none; margin-top:15px; cursor:pointer; color:var(--text-muted); font-size: 14px;">Cancel Registration</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
