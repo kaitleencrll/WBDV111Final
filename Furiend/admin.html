@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furiend | Admin Dashboard</title>
+  
+    <link rel="stylesheet" href="demostyle.css">
+    <link rel="stylesheet" href="adminstyle.css">
+</head>
+<body>
+
+<nav id="navbar">
+    <div class="logo">FURIEND ADMIN</div>
+
+    <div class="nav-links">
+        <a href="#dashboard">Dashboard</a>
+        <a href="#cases">Case Management</a>
+        <a href="#org">Organization Listings</a>
+        <a href="#resources">Resource Management</a>
+        <a onclick="openModal()" class="profile-btn">Profile</a>
+        <a href="index.html" class="logout">Log Out</a>
+    </div>
+</nav>
+
+<section id="dashboard" class="animate-fade">
+    
+    <div class="admin-hero" style="background-image: linear-gradient(rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.8)), url('Media/hero.png'); background-size: cover; background-position: center;">
+        <div class="hero-text">
+          
+            <h1>Welcome Back, <span style="color: var(--primary);">Admin07</span>!</h1>
+            <p>System status: <span class="status-indicator">● Online</span> | Active Rescues: 12</p>
+        </div>
+        <div class="hero-avatar">
+      
+            <img src="Media/logo.jpg" alt="Admin Avatar">
+        </div>
+    </div>
+
+
+ <div class="admin-stats-container">
+    <div class="grid admin-stats-grid">
+        
+       
+        <div class="card stat-card pro-card float-anim" style="--accent: #4a90e2;">
+            <div class="pro-card-header">
+                <h2>📈 Analytics</h2>
+            </div>
+            <div class="stat-number" data-target="1284">0</div>
+            <p>Total Rescues</p>
+            <div class="analytics-graph">
+                <svg viewBox="0 0 100 30">
+                    <path class="graph-path-infinite" d="M0,25 L10,20 L20,28 L30,15 L40,22 L50,10 L60,18 L70,5 L80,15 L90,8 L100,20" fill="none" stroke="var(--accent)" stroke-width="3"/>
+                </svg>
+            </div>
+        </div>
+        
+        
+        <div class="card stat-card pro-card centered-content" style="--accent: #facc15;">
+            <div class="particle-box">
+                <span class="hollow-yellow"></span>
+                <span class="hollow-yellow"></span>
+                <span class="hollow-yellow"></span>
+                <span class="hollow-yellow"></span>
+                <span class="hollow-yellow"></span>
+            </div>
+            <div class="pro-card-header">
+                <h2>💰 Donations</h2>
+            </div>
+            <div class="stat-number" data-target="45200">0</div>
+            <p>Funds Raised This Month (₱)</p>
+        </div>
+        
+      
+        <div class="card stat-card pro-card alert-active pulse-red" onclick="location.href='#cases'" style="--accent: #ef4444;">
+            <div class="pro-card-header">
+                <h2>🔔 Urgent Alerts</h2>
+            </div>
+            <div class="bell-box">
+                <div class="ringing-bell">🔔</div>
+            </div>
+            <div class="stat-number" data-target="3">0</div>
+            <p><i>Action Required</i></p>
+        </div>
+        
+    </div>
+</div>
+</section>
+
+<div class="command-shell" id="cases"> <!-- Navigation ID Fixed Here -->
+    <section class="dashboard-core">
+        <div class="header-main">
+            <div class="brand">
+                <h2 class="title">CASE <span class="light">MANAGEMENT</span></h2>
+                <div class="live-indicator active-glow" style="color: white;">
+    <span class="pulse green-pulse"></span> SYSTEM ACTIVE
+</div>
+            </div>
+            <div id="clockDisplay" class="clock"></div>
+        </div>
+
+        <div class="dual-grid">
+            <!-- LEFT: PRIORITY -->
+            <div class="col priority-zone">
+                <div class="col-head">
+                    <span>🚨</span>
+                    <h3>PRIORITY DISPATCH</h3>
+                    <span class="count-tag red">3</span>
+                </div>
+                <div id="urgentReports" class="stack"></div>
+            </div>
+
+            <!-- RIGHT: STANDARD -->
+            <div class="col standard-zone">
+                <div class="col-head">
+                    <span>📋</span>
+                    <h3>STANDARD QUEUE</h3>
+                    <span class="count-tag blue">5</span>
+                </div>
+                <div id="reportList" class="stack"></div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<section id="org" class="animate-fade">
+    <!-- Renamed to org-command-shell -->
+    <div class="org-command-shell">
+        <div class="org-header-main">
+            <h2 class="title">ORGANIZATION <span class="light">LISTINGS</span></h2>
+        </div>
+
+        <div class="org-dual-grid">
+            <!-- LEFT: VERIFIED PARTNERS -->
+<div class="col">
+    <div class="col-head" style="margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 24px;">✅</span>
+        <h3 style="margin: 0; color: #fff; letter-spacing: 1px;">VERIFIED PARTNERS</h3>
+    </div>
+    
+    <div class="partner-scroll-area">
+        <!-- Clinic 1 -->
+        <div class="partner-item">
+            <div class="p-img" style="background-image: url('Media/clinic1.jpg');"></div>
+            <div class="p-info">
+                <span class="v-badge">VERIFIED</span>
+                <h4>Valenzuela Pet Hospital</h4>
+                <small>McArthur Highway, Marulas</small>
+            </div>
+        </div>
+
+        <!-- Clinic 2 -->
+        <div class="partner-item">
+            <div class="p-img" style="background-image: url('Media/clinic2.jpg');"></div>
+            <div class="p-info">
+                <span class="v-badge">VERIFIED</span>
+                <h4>Paws & Claws Clinic</h4>
+                <small>Karuhatan, Valenzuela</small>
+            </div>
+        </div>
+
+        <!-- Shelter 1 -->
+        <div class="partner-item">
+            <div class="p-img" style="background-image: url('Media/shelter1.jpg');"></div>
+            <div class="p-info">
+                <span class="v-badge">GOVT PARTNER</span>
+                <h4>Valenzuela City Pound</h4>
+                <small>Brgy. Maysan</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- RIGHT: PENDING VERIFICATION -->
+            <div class="col">
+                <div class="col-head" style="margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                    <span style="font-size: 24px;">⏳</span>
+                    <h3 style="margin: 0; color: #fff; letter-spacing: 1px;">PENDING VERIFICATION</h3>
+                </div>
+                
+                <div class="case-card pending-card" id="pending-org-1">
+                    <span class="status-label s-processing">AWAITING REVIEW</span>
+                    <h4>North Rescue Team</h4>
+                    <p>Submitted 3 documents for rescue certification. Field investigation required.</p>
+                    <div class="btn-group">
+                        <button class="approve-btn" onclick="approveOrg('North Rescue Team', 'pending-org-1')">APPROVE</button>
+                        <button class="deny-btn" onclick="viewDocuments('North Rescue Team')">VIEW DOCS</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+           
+
+
+
+<div class="modal" id="adminProfileModal">
+    <div class="modal-content animate-fade">
+        <h2>Admin Settings</h2>
+        <div class="modal-body">
+            <label>Full Name</label>
+            <input type="text" value="Juan Dela Cruz">
+            <label>Admin Access Level</label>
+            <input type="text" value="Super Administrator" disabled>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" onclick="closeAdminModal()">Save</button>
+            <button class="btn-text" onclick="closeAdminModal()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<div id="profileModal" class="modal">
+    <div class="profile-modal-content">
+        <!-- MODAL HEADER -->
+        <div class="profile-header">
+            <div class="profile-avatar">
+                <span>AD</span>
+            </div>
+            <div class="profile-title">
+                <h2>ADMIN <span class="light">PROFILE</span></h2>
+                <small>System Administrator • Level 1 Access</small>
+            </div>
+            <button class="close-x" onclick="closeModal()">&times;</button>
+        </div>
+
+        <!-- ORGANIZATION SECTION -->
+        <div class="profile-section">
+            <div class="sec-head">
+                <span class="icon">🏢</span>
+                <h4>ORGANIZATION INFO</h4>
+            </div>
+            <div class="input-group">
+                <label>Admin Name</label>
+                <input type="text" value="Furiend Admin" class="profile-input">
+            </div>
+            <div class="input-group">
+                <label>Associated Branch</label>
+                <input type="text" value="Valenzuela Main HQ" class="profile-input" readonly>
+            </div>
+        </div>
+
+        <!-- SETTINGS SECTION -->
+        <div class="profile-section">
+            <div class="sec-head">
+                <span class="icon">⚙️</span>
+                <h4>SYSTEM SETTINGS</h4>
+            </div>
+            <div class="settings-grid">
+                <label class="switch-container">
+                    <span>Enable Real-time Alerts</span>
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+                <label class="switch-container">
+                    <span>Email Notifications</span>
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+                <label class="switch-container">
+                    <span>Dark Mode Persistence</span>
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <!-- MODAL FOOTER -->
+        <div class="profile-footer">
+            <button class="btn-save" onclick="saveProfile()">SAVE CHANGES</button>
+            <button class="btn-cancel" onclick="closeModal()">CANCEL</button>
+        </div>
+    </div>
+</div>
+
+
+
+<section id="resources" class="animate-fade">
+    <div class="res-command-shell">
+        <div class="org-header-main">
+            <h2 class="title">RESOURCE <span class="light">MANAGEMENT</span></h2>
+            <div class="total-donations-pill">
+                <span class="currency">PHP</span> 45,200 
+                <small>MONTHLY NET REVENUE</small>
+            </div>
+        </div>
+
+        <div class="res-triple-grid">
+            <!-- COLUMN 1: DONATIONS LEDGER -->
+            <div class="res-col">
+                <div class="col-head">
+                    <span>💰</span>
+                    <h3>RECENT DONATIONS</h3>
+                </div>
+                <div class="res-list">
+                    <div class="res-item">
+                        <div class="donor-info">
+                            <b>Juan Dela Cruz</b>
+                            <small>Ref: #TRX-9902 • 2h ago</small>
+                        </div>
+                        <span class="amount">+₱5,000</span>
+                    </div>
+                    <div class="res-item">
+                        <div class="donor-info">
+                            <b>Maria Clara</b>
+                            <small>Ref: #TRX-9841 • 5h ago</small>
+                        </div>
+                        <span class="amount">+₱2,500</span>
+                    </div>
+                    <div class="res-item">
+                        <div class="donor-info">
+                            <b>Anonymous</b>
+                            <small>Ref: #TRX-9830 • 1d ago</small>
+                        </div>
+                        <span class="amount">+₱1,200</span>
+                    </div>
+                    <div class="res-item">
+                        <div class="donor-info">
+                            <b>PetCare Corp</b>
+                            <small>Corporate Grant • 2d ago</small>
+                        </div>
+                        <span class="amount">+₱15,000</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMN 2: DISTRIBUTION & LOGISTICS -->
+            <div class="res-col">
+                <div class="col-head">
+                    <span>📦</span>
+                    <h3>ITEM REQUESTS</h3>
+                </div>
+                <div class="res-list">
+                    <div class="req-card pending">
+    <div class="req-header">
+        <span class="tag-req">PENDING</span>
+        <small>REQ-004</small>
+    </div>
+    <b>Valenzuela Pet Hospital</b>
+    <p>10x Surgical Gauze, 5x IV Fluids</p>
+    <!-- Use process-btn for the blue action button -->
+    <button class="process-btn">📦 RELEASE ITEMS</button>
+</div>
+
+<!-- Example of a Shipped Item -->
+<div class="req-card completed">
+    <div class="req-header">
+        <span class="tag-req">SHIPPED</span>
+        <small>REQ-003</small>
+    </div>
+    <b>Paws & Claws Clinic</b>
+    <p>25kg Puppy Kibble</p>
+    <!-- Use view-btn for the gray tracking button -->
+    <button class="view-btn">📍 TRACKING</button>
+</div>
+                </div>
+            </div>
+
+            <!-- COLUMN 3: INVENTORY STOCK -->
+            <div class="res-col">
+                <div class="col-head">
+                    <span>🥫</span>
+                    <h3>LIVE INVENTORY</h3>
+                </div>
+                <div class="res-list">
+                    <div class="inv-item">
+                        <div class="inv-meta">
+                            <span>Dog Food (Kibble)</span>
+                            <div class="progress-bar"><div class="fill" style="width: 85%;"></div></div>
+                        </div>
+                        <b class="qty">85kg</b>
+                    </div>
+                    <div class="inv-item">
+                        <div class="inv-meta">
+                            <span>Cat Food (Canned)</span>
+                            <div class="progress-bar"><div class="fill warning" style="width: 30%;"></div></div>
+                        </div>
+                        <b class="qty">42u</b>
+                    </div>
+                    <div class="inv-item">
+                        <div class="inv-meta">
+                            <span>Medical Kits</span>
+                            <div class="progress-bar"><div class="fill" style="width: 60%;"></div></div>
+                        </div>
+                        <b class="qty">12s</b>
+                    </div>
+                    <div class="inv-item">
+                        <div class="inv-meta">
+                            <span>Blankets/Towels</span>
+                            <div class="progress-bar"><div class="fill danger" style="width: 10%;"></div></div>
+                        </div>
+                        <b class="qty">4u</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="adminscript.js"></script>
+</body>
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furiend | Root Terminal</title>
+    <link rel="stylesheet" href="superstyle.css">
+    <!-- Font Awesome for professional icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="super-admin-theme">
+<header class="top-nav">
+    <div class="nav-container">
+        <!-- Logo Section -->
+        <div class="nav-logo">
+            <img src="Media/logo.jpg" alt="Logo">
+            <div class="brand-text">
+                <span>FURIEND <small>SYSTEM</small></span>
+            </div>
+        </div>
+
+        <!-- Navigation Section -->
+        <nav class="main-links">
+            <a href="#dashboard" class="nav-item active"><i class="fas fa-chart-line"></i> System Dashboard</a>
+            <a href="#administration" class="nav-item"><i class="fas fa-user-shield"></i> User Administration</a>
+            <a href="#controlcenter" class="nav-item"><i class="fas fa-sliders-h"></i> Platform Control Center</a>
+            <a href="#monitoring" class="nav-item"><i class="fas fa-satellite-dish"></i> Report Monitoring</a>
+            
+            <div class="nav-right-group">
+                <a onclick="toggleSuperModal('profileModal')" class="nav-item settings-trigger"><i class="fas fa-cog"></i> System Settings</a>
+                <a href="index.html" class="nav-item logout"><i class="fas fa-power-off"></i> Log Out</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main class="content-area">
+    <section id="dashboard" class="section-pane active">
+	<header class="pane-header">
+        <div class="title-group">
+            <h1>SYSTEM <span class="text-red">INTELLIGENCE</span></h1>
+            <p class="subtitle">GLOBAL OPERATIONAL COMMAND CENTER</p>
+        </div>
+        <div class="system-clock" id="liveClock">00:00:00</div>
+    </header>
+
+    <!-- ROW 1: PRIMARY METRICS (BIGGER) -->
+    <div class="stat-grid-expanded">
+        <div class="stat-card glass big-stat">
+            <div class="stat-icon-large"><i class="fas fa-hand-holding-heart"></i></div>
+            <div class="stat-data">
+                <label>OVERVIEW: CONSOLIDATED DONATIONS</label>
+                <h2 id="totalDonations" class="display-1">₱300,000</h2>
+                <div class="growth-indicator text-green">
+                    <i class="fas fa-chart-line"></i> +12.4% vs Last Month
+                </div>
+            </div>
+        </div>
+
+        <div class="stat-card glass big-stat">
+            <div class="stat-icon-large"><i class="fas fa-users"></i></div>
+            <div class="stat-data">
+                <label>ANALYTICS: ACTIVE PLATFORM USERS</label>
+                <h2 id="activeUsers" class="display-1">1,284</h2>
+                <div class="live-indicator">
+                    <span class="pulse-dot"></span> REAL-TIME TRAFFIC
+                </div>
+            </div>
+        </div>
+
+        <div class="stat-card glass alerts-zone">
+            <label class="text-red headline-label"><i class="fas fa-shield-alt"></i> SECURITY & ALERTS</label>
+            <div id="activeAlertsContainer" class="expanded-alert-stack">
+                <div class="mini-alert green">
+                    <span>GATEWAY</span>
+                    <strong>Uplink Stable</strong>
+                </div>
+                <div class="mini-alert yellow">
+                    <span>DISPATCH</span>
+                    <strong>3 Units Deploying</strong>
+                </div>
+                <div class="mini-alert red">
+                    <span>SECURITY</span>
+                    <strong>Firewall blocked IP: 103.4.xx</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ROW 2: INFRASTRUCTURE & DISPATCH (WIDER) -->
+    <div class="infrastructure-grid-expanded">
+        <div class="panel glass">
+            <div class="panel-header">
+                <h3><i class="fas fa-map-marked-alt"></i> REGIONAL DISPATCH STATUS</h3>
+                <span class="v-badge">7 ACTIVE SECTORS</span>
+            </div>
+            <div class="region-grid">
+                <div class="region-item"><span>Valenzuela</span><div class="status-pill online">Active</div></div>
+                <div class="region-item"><span>Quezon City</span><div class="status-pill online">Active</div></div>
+                <div class="region-item"><span>Caloocan</span><div class="status-pill busy">Busy</div></div>
+                <div class="region-item"><span>Manila</span><div class="status-pill online">Active</div></div>
+                <div class="region-item"><span>Pasig</span><div class="status-pill online">Active</div></div>
+                <div class="region-item"><span>Taguig</span><div class="status-pill busy">Busy</div></div>
+            </div>
+        </div>
+
+        <div class="panel glass">
+            <div class="panel-header">
+                <h3><i class="fas fa-database"></i> SYSTEM NODE ANALYTICS</h3>
+            </div>
+            <div class="node-performance-grid">
+                <div class="node-box">
+                    <label>API LATENCY</label>
+                    <div class="node-val">24ms</div>
+                    <div class="node-sparkline"><div class="spark-fill" style="width: 70%"></div></div>
+                </div>
+                <div class="node-box">
+                    <label>DB LOAD</label>
+                    <div class="node-val">14.2%</div>
+                    <div class="node-sparkline"><div class="spark-fill" style="width: 30%"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br><br><br>
+
+<section id="administration" class="section-pane">
+    <header class="pane-header">
+        <div class="title-group">
+            <h1>USER <span class="text-red">ADMINISTRATION</span></h1>
+            <p class="subtitle">IDENTITY & ACCESS MANAGEMENT (IAM)</p>
+        </div>
+        <div class="header-actions">
+            <button class="btn-cyber">
+                <i class="fas fa-user-plus"></i> PROVISION IDENTITY
+            </button>
+        </div>
+    </header>
+
+    <div class="admin-grid-triple">
+        <!-- PANEL A: MANAGE USERS (7 USERS) -->
+        <div class="panel glass">
+            <div class="panel-header">
+                <h3><i class="fas fa-users"></i> Manage Users</h3>
+                <span class="v-badge">7 ACTIVE</span>
+            </div>
+            <div class="user-list-scroll">
+                <div class="directory-item"><span>User_Alpha_99</span><button class="btn-icon"><i class="fas fa-user-edit"></i></button></div>
+                <div class="directory-item"><span>User_Beta_42</span><button class="btn-icon"><i class="fas fa-user-edit"></i></button></div>
+                <div class="directory-item"><span>User_Gamma_12</span><button class="btn-icon"><i class="fas fa-user-edit"></i></button></div>
+                <div class="directory-item"><span>User_Delta_07</span><button class="btn-icon"><i class="fas fa-user-edit"></i></button></div>
+                <div class="directory-item"><span>User_Epsilon_88</span><button class="btn-icon"><i class="fas fa-user-edit"></i></button></div>
+                <div class="directory-item"><span>User_Zeta_15</span><button class="btn-icon"><i class="fas fa-user-edit"></i></button></div>
+                <div class="directory-item"><span>User_Theta_33</span><button class="btn-icon"><i class="fas fa-user-edit"></i></button></div>
+            </div>
+        </div>
+
+        <!-- PANEL B: MANAGE ADMINS (5 ADMINS) -->
+        <div class="panel glass">
+            <div class="panel-header">
+                <h3><i class="fas fa-user-shield"></i> Manage Admins</h3>
+                <span class="v-badge red">5 PRIVILEGED</span>
+            </div>
+            <div class="user-list-scroll">
+                <div class="directory-item privileged"><span>Root_Commander</span><button class="btn-icon red"><i class="fas fa-key"></i></button></div>
+                <div class="directory-item privileged"><span>Admin_Sentinel_1</span><button class="btn-icon red"><i class="fas fa-shield-alt"></i></button></div>
+                <div class="directory-item privileged"><span>Admin_Sentinel_2</span><button class="btn-icon red"><i class="fas fa-shield-alt"></i></button></div>
+                <div class="directory-item privileged"><span>Sys_Architect_X</span><button class="btn-icon red"><i class="fas fa-cog"></i></button></div>
+                <div class="directory-item privileged"><span>Security_Lead_01</span><button class="btn-icon red"><i class="fas fa-lock"></i></button></div>
+            </div>
+        </div>
+
+        <!-- PANEL C: ROLES -->
+        <div class="panel glass">
+            <div class="panel-header">
+                <h3><i class="fas fa-fingerprint"></i> System Roles</h3>
+            </div>
+            <div class="role-stack">
+                <div class="role-card"><strong>Superadmin</strong><p>Unrestricted access to all kernel functions.</p></div>
+                <div class="role-card"><strong>Fleet Manager</strong><p>Control over regional dispatch and resources.</p></div>
+                <div class="role-card"><strong>Auditor</strong><p>Read-only access to encrypted logs and finances.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br><br><br>
+
+<section id="controlcenter" class="section-pane">
+    <header class="pane-header">
+        <div class="title-group">
+            <h1>PLATFORM <span class="text-red">CONTROL CENTER</span></h1>
+            <p class="subtitle">AUTONOMOUS MODERATION & DISPATCH PROTOCOLS</p>
+        </div>
+        <div class="system-stats">
+            <div class="stat-mini"><small>ACTIVE_NODES:</small> <span class="text-red">12</span></div>
+            <div class="stat-mini"><small>SYSTEM_LOAD:</small> 24%</div>
+        </div>
+    </header>
+
+    <div class="control-grid-triple">
+        <!-- PANEL A: INCIDENT QUEUE (4 CASES) -->
+        <div class="panel glass">
+            <div class="panel-header">
+                <h3><i class="fas fa-satellite-dish"></i> Incident Queue</h3>
+                <span class="v-badge animate-pulse">4 NEW</span>
+            </div>
+            <div class="control-stack">
+                <!-- Case 1: High Priority -->
+                <div class="control-card hover-lift border-red">
+                    <div class="card-lead">
+                        <strong class="text-red">CASE #882-A</strong>
+                        <span class="v-badge red">URGENT</span>
+                    </div>
+                    <div class="telemetry-data">
+                        <span>COORD: 14.6760° N, 120.9850° E</span>
+                        <span>ANALYSIS: TRAUMA_DETECTED (84%)</span>
+                    </div>
+                    <p>Injured Dog – Road Accident. Stray dog hit by vehicle on highway. Heavy bleeding reported.</p>
+                    <div class="card-btns">
+                        <button class="btn-cyber-small">AUTHORIZE</button>
+                        <button class="btn-ghost-red">DENY</button>
+                    </div>
+                </div>
+
+                <!-- Case 2: Rescue Needed -->
+                <div class="control-card hover-lift">
+                    <div class="card-lead">
+                        <strong>CASE #891-C</strong>
+                        <span class="v-badge">CRITICAL</span>
+                    </div>
+                    <div class="telemetry-data">
+                        <span>COORD: 14.5995° N, 120.9842° E</span>
+                        <span>RISK: RISING_WATER</span>
+                    </div>
+                    <p>Cat Trapped in Drain. Kitten stuck in drainage canal with rising water levels.</p>
+                    <div class="card-btns">
+                        <button class="btn-cyber-small">AUTHORIZE</button>
+                        <button class="btn-ghost-red">DENY</button>
+                    </div>
+                </div>
+
+                <!-- Case 3: Health Issue -->
+                <div class="control-card hover-lift">
+                    <div class="card-lead">
+                        <strong>CASE #902-M</strong>
+                        <span class="v-badge">STABLE</span>
+                    </div>
+                    <div class="telemetry-data">
+                        <span>COORD: 14.6507° N, 121.0483° E</span>
+                        <span>TYPE: MANGE_SEVERE</span>
+                    </div>
+                    <p>Stray Dog – Skin Infection. Advanced mange case near public market. Non-aggressive.</p>
+                    <div class="card-btns">
+                        <button class="btn-cyber-small">AUTHORIZE</button>
+                        <button class="btn-ghost-red">DENY</button>
+                    </div>
+                </div>
+
+                <!-- Case 4: Entrapment -->
+                <div class="control-card hover-lift">
+                    <div class="card-lead">
+                        <strong>CASE #915-K</strong>
+                        <span class="v-badge">PENDING</span>
+                    </div>
+                    <div class="telemetry-data">
+                        <span>COORD: 14.7011° N, 121.0330° E</span>
+                        <span>STATUS: RESTRICTED_SPACE</span>
+                    </div>
+                    <p>Puppy stuck between walls. Unable to move. Low vocalization detected.</p>
+                    <div class="card-btns">
+                        <button class="btn-cyber-small">AUTHORIZE</button>
+                        <button class="btn-ghost-red">DENY</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PANEL B: IDENTITY VAULT (4 ORGS) -->
+        <div class="panel glass">
+            <div class="panel-header">
+                <h3><i class="fas fa-shield-check"></i> Identity Vault</h3>
+            </div>
+            <div class="control-stack">
+                <!-- Org 1 -->
+                <div class="control-card verify-card active-border">
+                    <div class="card-lead">
+                        <strong>PAWS_PHILIPPINES</strong>
+                        <span class="status-indicator online">ACTIVE</span>
+                    </div>
+                    <ul class="validation-list">
+                        <li><i class="fas fa-check"></i> Tier 1 Organization</li>
+                        <li><i class="fas fa-check"></i> SEC Registered</li>
+                    </ul>
+                    <div class="card-btns">
+                        <button class="btn-cyber-small">MANAGE</button>
+                        <button class="btn-ghost">VAULT</button>
+                    </div>
+                </div>
+
+                <!-- Org 2 -->
+                <div class="control-card verify-card">
+                    <div class="card-lead">
+                        <strong>METRO_RESCUE_HUB</strong>
+                        <span class="status-indicator online">ACTIVE</span>
+                    </div>
+                    <ul class="validation-list">
+                        <li><i class="fas fa-check"></i> Logistic Node</li>
+                        <li><i class="fas fa-check"></i> 8 Active Units</li>
+                    </ul>
+                    <div class="card-btns">
+                        <button class="btn-cyber-small">MANAGE</button>
+                        <button class="btn-ghost">VAULT</button>
+                    </div>
+                </div>
+
+                <!-- Org 3 -->
+                <div class="control-card verify-card">
+                    <div class="card-lead">
+                        <strong>VET_NETWORK_PH</strong>
+                        <span class="status-indicator">STANDBY</span>
+                    </div>
+                    <ul class="validation-list">
+                        <li><i class="fas fa-check"></i> Medical Support</li>
+                        <li><i class="fas fa-check"></i> 24/7 Availability</li>
+                    </ul>
+                    <div class="card-btns">
+                        <button class="btn-cyber-small">MANAGE</button>
+                        <button class="btn-ghost">VAULT</button>
+                    </div>
+                </div>
+
+                <!-- Org 4 -->
+                <div class="control-card verify-card border-yellow">
+                    <div class="card-lead">
+                        <strong class="text-yellow">VOL_COALITION</strong>
+                        <span class="v-badge yellow">REVIEW</span>
+                    </div>
+                    <ul class="validation-list">
+                        <li><i class="fas fa-exclamation-triangle"></i> Docs Expiring</li>
+                        <li><i class="fas fa-check"></i> Community Group</li>
+                    </ul>
+                    <div class="card-btns">
+                        <button class="btn-cyber-small yellow">RE-VERIFY</button>
+                        <button class="btn-ghost">DOCS</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PANEL C: NEURAL SENTINEL -->
+        <div class="panel glass">
+            <div class="panel-header">
+                <h3><i class="fas fa-brain"></i> Neural Sentinel</h3>
+            </div>
+            <div class="mod-settings">
+                <div class="setting-item glass active-glow">
+                    <div class="set-info">
+                        <strong>HEURISTIC_SCANNING</strong>
+                        <div class="load-bar"><div class="load-progress"></div></div>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="audit-stream">
+                    <label class="headline-label">SYSTEM_LOG_UPLINK</label>
+                    <div class="terminal-box" id="neuralLogs">
+                        <div class="log-entry"><span class="timestamp">[20:04]</span> <span class="text-green">[INFO]</span> All nodes operational.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br><br><br>
+    <!-- 2. LIVE MONITORING & COMMAND -->
+<section id="monitoring" class="section-pane">
+    <header class="pane-header">
+        <div class="title-group">
+            <h1>LIVE <span class="text-red">MONITORING</span></h1>
+            <p class="subtitle">REAL-TIME TELEMETRY & NETWORK AUDIT</p>
+        </div>
+        <div class="header-status">
+            <span class="pulse-dot"></span> <small>UPLINK ACTIVE</small>
+        </div>
+    </header>
+
+    <div class="monitor-grid-unified">
+        <!-- LEFT COLUMN: GEO-TRACKING & INSIGHTS -->
+        <div class="monitor-main-col">
+            <div class="map-container glass">
+                <div class="map-header">
+                    <h3><i class="fas fa-satellite"></i> Global Report Feed</h3>
+                    <div id="mapTooltip" class="map-tooltip">Hover over a ping for telemetry</div>
+                </div>
+                <div class="map-viewport" id="mapOverlay">
+                    <!-- Location Pings -->
+                </div>
+            </div>
+
+            <div class="insights-row">
+                <div class="insight-card glass">
+                    <label>Avg Response Time</label>
+                    <strong>14m</strong>
+                </div>
+                <div class="insight-card glass">
+                    <label>Resolution Rate</label>
+                    <strong>94.2%</strong>
+                </div>
+                <div class="insight-card glass">
+                    <label>Total Ping Events</label>
+                    <strong id="pingCount">482</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN: ADMIN REGISTRY & AUDIT -->
+        <div class="monitor-side-col">
+            
+            <div class="panel audit-panel glass">
+                <div class="panel-header">
+                    <h3><i class="fas fa-terminal"></i> Recent Audit Logs</h3>
+                    <span class="live-pulse">LIVE</span>
+                </div>
+                <div class="audit-log-terminal" id="auditLogs">
+                    <!-- Logs stream here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- SETTINGS MODAL -->
+<div id="profileModal" class="super-modal">
+    <div class="modal-box glass animated-slide-up no-sidebar">
+        <div class="modal-main">
+            <header class="modal-header">
+                <div class="identity-tag"><i class="fas fa-microchip"></i> KERNEL_OVERRIDE_v3.2</div>
+                <h1>SYSTEM <span class="text-red">CONFIG</span></h1>
+            </header>
+
+            <div class="settings-grid">
+                <!-- SECTION: SECURITY -->
+                <div class="settings-group">
+                    <h3 class="group-label"><i class="fas fa-shield-alt"></i> SECURITY</h3>
+                    <div class="config-row">
+                        <div class="config-label">
+                            <strong>FIDO2_AUTH</strong>
+                            <small>Hardware key enforcement.</small>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- SECTION: PRIVACY -->
+                <div class="settings-group">
+                    <h3 class="group-label"><i class="fas fa-user-secret"></i> PRIVACY</h3>
+                    <div class="config-row">
+                        <div class="config-label">
+                            <strong>DATA_MASKING</strong>
+                            <small>Hide reporter identities.</small>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- SECTION: CONFIGURATION -->
+                <div class="settings-group">
+                    <h3 class="group-label"><i class="fas fa-tools"></i> NETWORK</h3>
+                    <div class="config-row">
+                        <div class="config-label">
+                            <strong>AUTO_DISPATCH</strong>
+                            <small>AI-routed rescue units.</small>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <!-- Real-time Latency indicator -->
+                    <div class="latency-status">
+                        <span>LATENCY: <span class="text-green">24ms</span></span>
+                        <div class="mini-pulse"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn-cyber-small" onclick="saveAndCloseSettings()">APPLY_SYCHRONIZATION</button>
+                <button class="btn-ghost" onclick="toggleSuperModal('profileModal')">CANCEL</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="superscript.js"></script>
+</body>
+</html>
